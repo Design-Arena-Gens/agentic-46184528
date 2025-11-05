@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-feature-settings: "ss01" on, "cv01" on, "cv02" on;
+}
+
+/* Swiss design-inspired utility classes */
+.container-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* Sidebar + content */
+  min-height: 100vh;
+}
+
+.card {
+  @apply bg-white border border-neutral-200 rounded-md; 
+}
+
+.card-inner {
+  @apply p-6;
+}
+
+.h1 {
+  @apply text-4xl font-semibold tracking-tight;
+}
+.h2 {
+  @apply text-2xl font-semibold tracking-tight;
+}
+.h3 {
+  @apply text-lg font-semibold tracking-tight;
+}
+
+.text-muted { @apply text-neutral-500; }
+.text-soft { @apply text-neutral-400; }
+
+a { @apply text-inherit; }
+
+.btn-primary { @apply inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-sm hover:bg-accent-700 transition; }
+.btn-ghost { @apply inline-flex items-center gap-2 px-4 py-2 border border-neutral-200 rounded-sm hover:bg-neutral-50; }
+
+.table {
+  @apply w-full border-collapse; 
+}
+.table th { @apply text-left text-neutral-500 font-medium py-3 border-b border-neutral-200; }
+.table td { @apply py-3 border-b border-neutral-200; }
+
+.badge { @apply px-2 py-0.5 text-xs rounded-sm border border-neutral-300 bg-neutral-50; }
+
+.sidebar-link { @apply block px-4 py-2 rounded-sm hover:bg-neutral-100; }
+.sidebar-link-active { @apply bg-neutral-900 text-white hover:bg-neutral-900; }
